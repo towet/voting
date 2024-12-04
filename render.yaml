@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: flask-voting-system
+    env: docker
+    buildCommand: docker build -t flask-voting-app .
+    startCommand: docker run -p $PORT:5000 flask-voting-app
+    envVars:
+      - key: PORT
+        value: 5000
